@@ -1,0 +1,74 @@
+Started GET "/" for 127.0.0.1 at 2017-02-03 16:16:58 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/SGrayson/.rvm/gems/ruby-2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/SGrayson/.rvm/gems/ruby-2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 28ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-03 16:26:32 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1578ms (Views: 1571.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-03 16:26:53 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 288ms (Views: 275.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-03 16:36:05 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-03 17:27:17 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/show?zip-code=sD&submit=Submit" for 127.0.0.1 at 2017-02-03 17:27:22 -0500
+Processing by HomeController#show as HTML
+  Parameters: {"zip-code"=>"sD", "submit"=>"Submit"}
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 134ms (Views: 128.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-03 17:32:01 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/show?zip_code=12345&submit=Submit" for 127.0.0.1 at 2017-02-03 17:32:07 -0500
+Processing by HomeController#show as HTML
+  Parameters: {"zip_code"=>"12345", "submit"=>"Submit"}
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 56ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-03 17:44:11 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 322ms (Views: 308.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/show?zip_code=65770&submit=Submit" for 127.0.0.1 at 2017-02-03 17:44:23 -0500
+Processing by HomeController#show as HTML
+  Parameters: {"zip_code"=>"65770", "submit"=>"Submit"}
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 198ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
