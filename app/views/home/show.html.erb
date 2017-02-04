@@ -1,2 +1,42 @@
-<h1>you made it to the SHOW</h1>
-<h3><%= @legislators %></h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-center">
+      <h1>Your Legislators</h1>
+    </div>
+  </div>
+  <% if @legislators %>
+    <% @legislators['results'].each do |leg| %>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 text-center">
+        <img class="img-circle" src="https://theunitedstates.io/images/congress/225x275/<%=leg["bioguide_id"]%>.jpg" alt="<%= leg["first_name"] + " " + leg["last_name"]%>">
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <h2><%= leg["first_name"] + " " + leg["last_name"] %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <h3><%= Home.chamber(leg["chamber"]) + ", " + leg["party"]%></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <p><%= leg["website"] %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-3 text-center">
+        <a href="#"><img class="social-icon-image" src="<%= asset_path( 'facebook.png' ) %>" alt="facebook"></a>
+      </div>
+      <div class="col-md-2 text-center">
+        <a href="#"><img class="social-icon-image" src="<%= asset_path( 'twitter.png' ) %>" alt="twitter"></a>
+      </div>
+      <div class="col-md-2 text-center">
+        <a href="#"><img class="social-icon-image" src="<%= asset_path( 'youtube.png' ) %>" alt="youtube"></a>
+      </div>
+    </div>
+    <% end%>
+  <% end%>
+</div>

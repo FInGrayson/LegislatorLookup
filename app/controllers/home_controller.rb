@@ -3,7 +3,6 @@ class HomeController < ApplicationController
   end
 
   def show
-    zip = params[:zip_code]
-    @legislators = HTTParty.get("https://congress.api.sunlightfoundation.com/legislators/locate?zip=#{zip}")
+    @legislators = Home.zip(params[:zip_code])
   end
 end

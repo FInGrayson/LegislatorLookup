@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LegislatorLookup</title>
+    <title>Legislator Lookup</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'bootstrap.min.css', media: 'all' %>
+    <%= stylesheet_link_tag    'style.scss', media: 'all' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="main-body">
+      <%= yield %>
+    </div>
   </body>
 </html>
