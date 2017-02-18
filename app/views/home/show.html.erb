@@ -1,42 +1,74 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="text-center">
-      <h1>Your Legislators</h1>
-    </div>
+<div class="row">
+  <div class="text-center">
+    <h1>Your Legislators</h1>
   </div>
-  <% if @legislators %>
-    <% @legislators['results'].each do |leg| %>
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-4 text-center">
-        <img class="img-circle" src="https://theunitedstates.io/images/congress/225x275/<%=leg["bioguide_id"]%>.jpg" alt="<%= leg["first_name"] + " " + leg["last_name"]%>">
-      </div>
-    </div>
-    <div class="row">
-      <div class="text-center">
-        <h2><%= leg["first_name"] + " " + leg["last_name"] %></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="text-center">
-        <h3><%= Home.chamber(leg["chamber"]) + ", " + leg["party"]%></h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="text-center">
-        <p><%= leg["website"] %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-3 text-center">
-        <a href="#"><img class="social-icon-image" src="<%= asset_path( 'facebook.png' ) %>" alt="facebook"></a>
-      </div>
-      <div class="col-md-2 text-center">
-        <a href="#"><img class="social-icon-image" src="<%= asset_path( 'twitter.png' ) %>" alt="twitter"></a>
-      </div>
-      <div class="col-md-2 text-center">
-        <a href="#"><img class="social-icon-image" src="<%= asset_path( 'youtube.png' ) %>" alt="youtube"></a>
-      </div>
-    </div>
-    <% end%>
-  <% end%>
 </div>
+
+<% if @legislators %>
+  <% @legislators['results'].each do |leg| %>
+    <div class="row">
+      <div class="col-md-4 col-sm-12 text-center">
+        <h2><%= leg["first_name"] + " " + leg["last_name"] %></h2>
+        <img class="img-circle" src="https://theunitedstates.io/images/congress/225x275/<%=leg["bioguide_id"]%>.jpg" alt="<%= leg["first_name"] + " " + leg["last_name"]%>">
+        <h5><%= Home.chamber(leg["chamber"]) + ", " + leg["party"]+"-"+leg["state"]%></h5>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <h4 class="text-center">Contact Information</h4>
+        <table>
+          <tr>
+            <th>Phone:</th>
+            <td><%= leg["phone"] %></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td><%= leg["oc_email"] %></td>
+          </tr>
+          <tr>
+            <th>Website:</th>
+            <td><%= leg["website"] %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <h4 class="text-center">Proposed Bills</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Bill ID</th>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @bills = Home.bills(leg['bioguide_id']) %>
+              <% @bills['results'].each do |bill| %>
+                <tr>
+                  <td><a href="<%= bill['urls']['congress'] %>" target="_blank"><%= bill['bill_id'] %></a></td>
+                  <td><%= bill['official_title'] %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row red">
+      <div class="text-center social-icons">
+        <% if leg['facebook_id'] %>
+          <a href="https://www.facebook.com/profile.php?id=<%=leg['facebook_id']%>" target="_blank"><img class="social-icon-image" src="<%= asset_path( 'facebook.png' ) %>" alt="facebook"></a>
+        <% end %>
+        <% if leg['twitter_id'] %>
+          <a href="https://twitter.com/<%=leg['twitter_id']%>" target="_blank"><img class="social-icon-image" src="<%= asset_path( 'twitter.png' ) %>" alt="twitter"></a>
+        <% end %>
+        <% if leg['youtube_id'] %>
+          <a href="https://www.youtube.com/<%=leg['youtube_id']%>" target="_blank"><img class="social-icon-image" src="<%= asset_path( 'youtube.png' ) %>" alt="youtube"></a>
+        <% end %>
+      </div>
+    </div>
+    <div class="row white">
+    </div>
+    <div class="row blue">
+    </div>
+  <% end%>
+<% end%>

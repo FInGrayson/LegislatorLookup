@@ -1,9 +1,17 @@
+@import 'colors';
+
 * {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
+  font: $font-stack;
+  color: $primary-black;
+}
+
+html, body {
+  height:100%;
 }
 
 .main-body {
-  background-color: red;
+  min-height:100%;
+  background-color: $primary-white;
 }
